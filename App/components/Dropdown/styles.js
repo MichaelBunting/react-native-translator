@@ -1,4 +1,9 @@
-import { WHITE_TRANSPARENT, WHITE, CHARCOAL, GRAY } from '../../styles';
+import {
+  WHITE_TRANSPARENT,
+  WHITE,
+  CHARCOAL,
+  GRAY,
+} from '../../styles';
 
 export default {
   baseColor: WHITE_TRANSPARENT,
@@ -10,4 +15,4 @@ export default {
     top: 25,
     left: 0,
   },
-}
+};

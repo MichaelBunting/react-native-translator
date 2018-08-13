@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import styles from './styles';
 import Dropdown from '../Dropdown';
@@ -16,12 +17,13 @@ export default () => (
           text: 'foo',
         }, {
           value: 'bar',
-          text: 'bar'
+          text: 'bar',
         }]}
         label="Language"
       />
     </View>
     <View style={[styles.block, styles.iconContainer]}>
+      <MaterialCommunityIcons name="arrow-right" style={styles.icon} />
     </View>
     <View style={styles.block}>
       <Text style={styles.label}>
@@ -33,7 +35,7 @@ export default () => (
           text: 'foo',
         }, {
           value: 'bar',
-          text: 'bar'
+          text: 'bar',
         }]}
         label="Language"
       />

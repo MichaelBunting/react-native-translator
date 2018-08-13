@@ -15,13 +15,15 @@ export default StyleSheet.create({
   },
   iconContainer: {
     flex: 0,
+    justifyContent: 'center',
   },
   icon: {
-
+    color: WHITE,
+    fontSize: 18,
   },
   label: {
     fontSize: 14,
     color: WHITE,
-    fontWeight: "600",
-  }
+    fontWeight: '600',
+  },
 });

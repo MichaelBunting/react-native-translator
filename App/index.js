@@ -4,6 +4,19 @@ import { StyleSheet, View, StatusBar } from 'react-native';
 import { WHITE, CHARCOAL } from './styles';
 import Home from './views/Home';
 
+const styles = StyleSheet.create({
+  page: {
+    flex: 1,
+  },
+  statusBar: {
+    height: 20,
+  },
+  container: {
+    backgroundColor: WHITE,
+    flex: 1,
+  },
+});
+
 export default () => (
   <View style={styles.page}>
     <View
@@ -20,16 +33,3 @@ export default () => (
     </View>
   </View>
 );
-
-const styles = StyleSheet.create({
-  page: {
-    flex: 1,
-  },
-  statusBar: {
-    height: 20,
-  },
-  container: {
-    backgroundColor: WHITE,
-    flex: 1,
-  },
-});

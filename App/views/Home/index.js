@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import LanguageSelector from '../../components/LanguageSelector';
 import LanguageField from '../../components/LanguageField';
@@ -14,6 +15,10 @@ const styles = StyleSheet.create({
 });
 
 class Home extends Component {
+  static propTypes = {
+    fetchData: PropTypes.func.isRequired,
+  }
+
   componentDidMount() {
     const { fetchData } = this.props;
 
@@ -36,11 +41,11 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const { isLoading, language1 } = state.homeReducer;
+  const { isLoading, languages } = state.homeReducer;
 
   return {
     isLoading,
-    language1,
+    languages,
   };
 };
 

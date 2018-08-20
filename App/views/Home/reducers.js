@@ -5,7 +5,8 @@ import {
 
 const initialState = {
   isLoading: true,
-  language1: '',
+  // language1: '',
+  languages: [],
 };
 
 export default (state = initialState, action) => {
@@ -17,7 +18,7 @@ export default (state = initialState, action) => {
     case RECEIVED_DATA:
       return Object.assign({}, state, {
         isLoading: false,
-        language1: action.language1,
+        languages: action.languages,
       });
     default:
       return state;

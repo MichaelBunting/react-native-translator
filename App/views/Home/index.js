@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { View, StyleSheet } from 'react-native';
 
-import LanguageSelector from '../../components/LanguageSelector';
+import LanguageSelectorContainer from '../../components/LanguageSelector/Container';
 import LanguageField from '../../components/LanguageField';
 
 import { getData } from './actions';
@@ -28,7 +28,7 @@ class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <LanguageSelector />
+        <LanguageSelectorContainer />
         <View style={styles.container}>
           <LanguageField />
           <LanguageField

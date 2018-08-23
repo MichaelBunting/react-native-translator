@@ -3,10 +3,9 @@ import {
   RECEIVED_DATA,
 } from './actions';
 
-const initialState = {
+export const initialState = {
   isLoading: true,
-  // language1: '',
-  languages: [],
+  languages: {},
 };
 
 export default (state = initialState, action) => {

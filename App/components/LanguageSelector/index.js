@@ -1,24 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import styles from './styles';
 import Dropdown from '../Dropdown';
 
-export default () => (
+const LanguageSelector = ({ languages }) => (
   <View style={styles.container}>
     <View style={[styles.block, styles.blockFirstChild]}>
       <Text style={styles.label}>
         From:
       </Text>
       <Dropdown
-        options={[{
-          value: 'foo',
-          text: 'foo',
-        }, {
-          value: 'bar',
-          text: 'bar',
-        }]}
+        options={languages}
+        selectedVal="English"
         label="Language"
       />
     </View>
@@ -30,15 +26,16 @@ export default () => (
         To:
       </Text>
       <Dropdown
-        options={[{
-          value: 'foo',
-          text: 'foo',
-        }, {
-          value: 'bar',
-          text: 'bar',
-        }]}
+        options={languages}
+        selectedVal="Spanish"
         label="Language"
       />
     </View>
   </View>
 );
+
+LanguageSelector.propTypes = {
+  languages: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+export default LanguageSelector;

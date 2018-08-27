@@ -17,22 +17,26 @@ const styles = StyleSheet.create({
 class Home extends Component {
   static propTypes = {
     fetchData: PropTypes.func.isRequired,
+    fromLang: PropTypes.string.isRequired,
+    toLang: PropTypes.string.isRequired,
   }
 
   componentDidMount() {
     const { fetchData } = this.props;
-
     fetchData();
   }
 
   render() {
+    const { fromLang, toLang } = this.props;
+
     return (
       <View style={styles.container}>
         <LanguageSelectorContainer />
         <View style={styles.container}>
-          <LanguageField />
+          <LanguageField language={fromLang} />
           <LanguageField
             editable={false}
+            language={toLang}
           />
         </View>
       </View>
@@ -41,11 +45,20 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const { isLoading, languages } = state.homeReducer;
+  const {
+    isLoading,
+    languages,
+  } = state.homeReducer;
+  const {
+    fromLang,
+    toLang,
+  } = state.languageSelectorReducer;
 
   return {
     isLoading,
     languages,
+    fromLang,
+    toLang,
   };
 };
 

@@ -17,15 +17,11 @@ export const receiveData = data => ({
 export const getData = () => async (dispatch) => {
   dispatch(requestData());
 
-  try {
-    const data = await fetch(`${baseTranslateApiUrl}?key=${apiKey}&ui=en`);
-    const json = await data.json();
-    const languages = json.langs;
+  const data = await fetch(`${baseTranslateApiUrl}?key=${apiKey}&ui=en`);
+  const json = await data.json();
+  const languages = json.langs;
 
-    dispatch(receiveData({
-      languages,
-    }));
-  } catch (e) {
-    console.error(e);
-  }
+  dispatch(receiveData({
+    languages,
+  }));
 };

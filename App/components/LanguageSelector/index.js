@@ -6,7 +6,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import styles from './styles';
 import Dropdown from '../Dropdown';
 
-const LanguageSelector = ({ languages }) => (
+const LanguageSelector = ({ languages, setFromLang, setToLang }) => (
   <View style={styles.container}>
     <View style={[styles.block, styles.blockFirstChild]}>
       <Text style={styles.label}>
@@ -16,6 +16,7 @@ const LanguageSelector = ({ languages }) => (
         options={languages}
         selectedVal="English"
         label="Language"
+        onChangeText={setFromLang}
       />
     </View>
     <View style={[styles.block, styles.iconContainer]}>
@@ -29,6 +30,7 @@ const LanguageSelector = ({ languages }) => (
         options={languages}
         selectedVal="Spanish"
         label="Language"
+        onChangeText={setToLang}
       />
     </View>
   </View>
@@ -36,6 +38,8 @@ const LanguageSelector = ({ languages }) => (
 
 LanguageSelector.propTypes = {
   languages: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setFromLang: PropTypes.func.isRequired,
+  setToLang: PropTypes.func.isRequired,
 };
 
 export default LanguageSelector;

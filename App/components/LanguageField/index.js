@@ -4,15 +4,15 @@ import { View, Text, TextInput } from 'react-native';
 
 import styles from './styles';
 
-const LanguageField = ({ editable }) => (
+const LanguageField = ({ editable, language = '' }) => (
   <View style={styles.block}>
     <Text style={styles.label}>
-      {'English'.toUpperCase()}
+      {language.toUpperCase()}
     </Text>
     <TextInput
       style={styles.field}
       multiline
-      placeholder="English Text..."
+      placeholder={`${language} Text...`}
       placeholderTextColor="#aaa"
       editable={editable}
     />
@@ -21,6 +21,7 @@ const LanguageField = ({ editable }) => (
 
 LanguageField.propTypes = {
   editable: PropTypes.bool,
+  language: PropTypes.string.isRequired,
 };
 
 LanguageField.defaultProps = {
